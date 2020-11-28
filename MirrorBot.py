@@ -164,7 +164,7 @@ def streamable(clip_url, submission, comment):
     #Get clip info
     clipinfo(clip_url, submission)
     api_url = 'https://api.streamable.com/import'
-    payload = {'url': clip_url, "title": title_clip}
+    payload = {'url': clip_url, "title": title_clip + " - Clip from " + broadcaster_url}
     headers = {'User-Agent': 'A bot that creates mirrors of clips'}
     r = requests.get(api_url, params=payload, auth=(os.environ['STREAMABLE_USER'], os.environ['STREAMABLE_PW']), headers=headers)
     if r.status_code == 200:
@@ -183,7 +183,7 @@ def streamable(clip_url, submission, comment):
             reply = comment.reply(reply_text)
             reply.mod.distinguish()
         #Create private backup of clip.
-        r_private = requests.get(api_url, params=payload, auth=(os.environ['STREAMABLE_PRIV_USER'], os.environ['STREAMABLE_PRIV_PW']), headers=headers)
+        r_private = requests.get(api_url, params=payload, auth=(os.environ['STREAMABLE_USER'], os.environ['STREAMABLE_PW']), headers=headers)
         if r_private.status_code == 200:
             priv_data = r_private.json()
             print("Private clip created: http://streamable.com/{0}".format(priv_data['shortcode']))
