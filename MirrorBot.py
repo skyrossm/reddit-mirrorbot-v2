@@ -239,8 +239,6 @@ def process_submission(submission, comment):
             #Could also configure to auto remove post
             streamable(new_url, submission, comment)
         print('Replied to {0}'.format(sid))
-        #prevent rate limiting (>1 request per second)
-        time.sleep(5)
     else:
         pass
 
@@ -262,15 +260,18 @@ while True:
             break
         print(submission.title)
         process_submission(submission, None)
-
+        #prevent rate limiting (>1 request per second)
+        time.sleep(5)
     #Check for new mirror requests
     for comment in comment_stream:
         if comment is None:
             print("No new mirror requests")
             break
         comment_text = str(comment.body).strip()
-        if comment_text == "u/RPClipsBackupBot backup" or comment_text == "!newmirror" or comment_text == "u/RPClipsBackupBot mirror":
+        if comment.distinguished and comment_text == "u/RPClipsBackupBot backup" or comment_text == "!newmirror" or comment_text == "u/RPClipsBackupBot mirror":
             process_submission(comment.submission, comment)
+            #prevent rate limiting (>1 request per second)
+            time.sleep(5)
 
     #Update the sidebar
     update_sidebar(get_streamer_list())
