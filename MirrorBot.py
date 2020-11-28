@@ -128,8 +128,8 @@ def get_streamer_list():
 
     #Get list of streamers less than 250 viewers
     randomList = sorted(i for i in viewer_count if i <= 250)
-    if len(newlist) != 0:
-        ran = random.choice(newlist)
+    if len(randomList) != 0:
+        ran = random.choice(randomList)
     else:
         ran = viewer_count[-1]
     newindex = viewer_count.index(ran)
