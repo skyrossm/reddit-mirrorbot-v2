@@ -104,7 +104,7 @@ def get_streamer_list():
 
     #Get the top streamer names
     names = [x['channel']['display_name']
-    for x in data['streams']
+    for x in stream_data['streams']
         if (any(s in x['channel'].get('status', '').lower() for s in wordList)
         or any(u in x['channel'].get('display_name', '') for u in streamerList))
         and x['broadcast_platform']=='live'
@@ -112,7 +112,7 @@ def get_streamer_list():
 
     #Same code but for view count
     viewer_count = [x['viewers']
-    for x in data['streams']
+    for x in stream_data['streams']
         if (any(s in x['channel'].get('status', '').lower() for s in wordList)
         or any(u in x['channel'].get('display_name', '') for u in streamerList))
         and x['broadcast_platform']=='live'
