@@ -267,8 +267,7 @@ while True:
         if comment is None:
             print("No new mirror requests")
             break
-        comment_text = str(comment.body)
-        print(comment_text)
+        comment_text = str(comment.body).strip()
         if comment_text == "u/RPClipsBackupBot backup" or comment_text == "!newmirror" or comment_text == "u/RPClipsBackupBot mirror":
             process_submission(comment.submission, comment)
 
@@ -277,4 +276,4 @@ while True:
     print("Updated sidebars")
 
     #Sleep for 5 minutes. (30s for testing)
-    time.sleep(30)
+    time.sleep(300)
