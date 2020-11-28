@@ -181,7 +181,7 @@ def streamable(clip_url, submission, comment):
         else:
             #Reply to the comment on reddit
             reply = comment.reply(reply_text)
-            reply.mod.distinguish())
+            reply.mod.distinguish()
         #Create private backup of clip.
         r_private = requests.get(api_url, params=payload, auth=(os.environ['STREAMABLE_PRIV_USER'], os.environ['STREAMABLE_PRIV_PW']), headers=headers)
         if r_private.status_code == 200:
