@@ -219,7 +219,7 @@ def clipinfo(clip_url, submission):
     broadcaster_url = data["broadcaster"]["channel_url"]
     title_clip = data["title"]
     try:
-         vod_link = '[Continue watching](' + json["vod"]["url"] + ')'
+         vod_link = '[Continue watching](' + data["vod"]["url"] + ')'
     except TypeError:
         print("No vod link")
         vod_link = ''
