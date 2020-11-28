@@ -178,11 +178,14 @@ def streamable(clip_url, submission, comment):
             reply = submission.reply(reply_text)
             reply.mod.distinguish(sticky=True)
             reply.mod.lock()
+            print("Replied to submission.")
         else:
             #Reply to the comment on reddit
             reply = comment.reply(reply_text)
             reply.mod.distinguish()
+            print("Replied to comment")
         #Create private backup of clip.
+        time.sleep(10) #10s for rate limiting.
         payload = {'url': clip_url, "title": "[PRIVATE] " + title_clip + " - Clip from " + broadcaster_url}
         r_private = requests.get(api_url, params=payload, auth=(os.environ['STREAMABLE_USER'], os.environ['STREAMABLE_PW']), headers=headers)
         if r_private.status_code == 200:
@@ -268,7 +271,8 @@ while True:
             print("No new mirror requests")
             break
         comment_text = str(comment.body).strip()
-        if comment.distinguished and comment_text == "u/RPClipsBackupBot backup" or comment_text == "!newmirror" or comment_text == "u/RPClipsBackupBot mirror":
+        if comment.distinguished and (comment_text == "u/RPClipsBackupBot backup" or comment_text == "!newmirror" or comment_text == "u/RPClipsBackupBot mirror"):
+            print("processing comment")
             process_submission(comment.submission, comment)
             #prevent rate limiting (>1 request per second)
             time.sleep(5)
@@ -278,4 +282,4 @@ while True:
     print("Updated sidebars")
 
     #Sleep for 5 minutes. (30s for testing)
-    time.sleep(300)
+    time.sleep(30)
