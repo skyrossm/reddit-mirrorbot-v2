@@ -183,6 +183,7 @@ def streamable(clip_url, submission, comment):
             reply = comment.reply(reply_text)
             reply.mod.distinguish()
         #Create private backup of clip.
+        payload = {'url': clip_url, "title": "[PRIVATE] " + title_clip + " - Clip from " + broadcaster_url}
         r_private = requests.get(api_url, params=payload, auth=(os.environ['STREAMABLE_USER'], os.environ['STREAMABLE_PW']), headers=headers)
         if r_private.status_code == 200:
             priv_data = r_private.json()
