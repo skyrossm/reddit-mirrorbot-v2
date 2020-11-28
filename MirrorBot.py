@@ -282,4 +282,4 @@ while True:
     print("Updated sidebars")
 
     #Sleep for 5 minutes. (30s for testing)
-    time.sleep(30)
+    time.sleep(300)
