@@ -172,7 +172,7 @@ def streamable(clip_url, submission, comment):
         data = r.json()
         #Gets the video ID
         shortcode = data['shortcode']
-        reply_text = reply_template.format(title_clip, shortcode, broadcasteR_url, vod_link)
+        reply_text = reply_template.format(title_clip, shortcode, broadcaster_url, vod_link)
         if comment is None:
             #Reply to the submission on reddit and sticky.
             reply = submission.reply(reply_text)
