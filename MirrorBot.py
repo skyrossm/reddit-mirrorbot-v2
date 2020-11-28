@@ -185,8 +185,8 @@ def streamable(clip_url, submission, comment):
         #Create private backup of clip.
         r_private = requests.get(api_url, params=payload, auth=(os.environ['STREAMABLE_PRIV_USER'], os.environ['STREAMABLE_PRIV_PW']), headers=headers)
         if r_private.status_code == 200:
-            data = r.json()
-            print("Private clip created: http://streamable.com/", data['shortcode'])
+            priv_data = r_private.json()
+            print("Private clip created: http://streamable.com/{0}".format(priv_data['shortcode'])
     else:
         print("Error getting streamable clip.")
         pass
