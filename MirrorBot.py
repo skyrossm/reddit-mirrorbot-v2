@@ -251,7 +251,7 @@ def process_submission(submission, comment):
 submission_stream = subreddit.stream.submissions(pause_after=-1, skip_existing=True)
 
 #Comment stream for the subreddit (Only includes new comments)
-comment_stream = subreddit.stream.commentS(pause_after=-1, skip_existing=True)
+comment_stream = subreddit.stream.comments(pause_after=-1, skip_existing=True)
 
 while True:
     #Check for new posts
