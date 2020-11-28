@@ -1,1 +1,1 @@
-worker: python update_kraken.py
+worker: python MirrorBot.py
