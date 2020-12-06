@@ -138,10 +138,12 @@ def get_streamer_list():
 
     global oldsidebar_formatted
     oldsidebar_formatted = oldreddit_sidebar.format(names[0], names[1], names[2], names[3], names[4], names[5], names[6], names[7], names[8], random_stream, viewer_count[0], viewer_count[1], viewer_count[2], viewer_count[3], viewer_count[4], viewer_count[5], viewer_count[6], viewer_count[7],  viewer_count[8])
-    print(oldsidebar_formatted)
     return newreddit_sidebar.format(names[0], names[1], names[2], names[3], names[4], names[5], names[6], names[7], names[8], random_stream, viewer_count[0], viewer_count[1], viewer_count[2], viewer_count[3], viewer_count[4], viewer_count[5], viewer_count[6], viewer_count[7],  viewer_count[8])
 
 def update_sidebar(updateText):
+    #Update old sidebar
+    reddit.subreddit(os.environ['REDDIT_SUBREDDIT']).mod.update(description=oldsidebar_formatted)
+    
     #Update new sidebar
     custom = None
     widgets = subreddit.widgets
@@ -151,11 +153,6 @@ def update_sidebar(updateText):
                 custom = widget
                 break
     custom.mod.update(text=updateText)
-    sidebar_contents = settings['description']
-
-    print(oldsidebar_formatted)
-    #Update old sidebar
-    subreddit.mod.update(description=oldsidebar_formatted)
 
 ######################
 # PART 3: MIRROR BOT #
