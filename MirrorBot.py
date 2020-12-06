@@ -50,7 +50,6 @@ oldreddit_sidebar = '''
 [](https://discord.gg/pbHERV6y87)
 
 --------------------------------
-
 **[CLICK HERE FOR RULES](https://www.reddit.com/r/RPClipsGTA/wiki/subreddit/rules)**
 ---
 
@@ -72,6 +71,7 @@ Streamer | Viewer Count
 
 -------------------------------------------------------------
 '''
+
 
 #Reply template for Mirror bot
 reply_template = '''
@@ -138,6 +138,7 @@ def get_streamer_list():
 
     global oldsidebar_formatted
     oldsidebar_formatted = oldreddit_sidebar.format(names[0], names[1], names[2], names[3], names[4], names[5], names[6], names[7], names[8], random_stream, viewer_count[0], viewer_count[1], viewer_count[2], viewer_count[3], viewer_count[4], viewer_count[5], viewer_count[6], viewer_count[7],  viewer_count[8])
+    print(oldsidebar_formatted)
     return newreddit_sidebar.format(names[0], names[1], names[2], names[3], names[4], names[5], names[6], names[7], names[8], random_stream, viewer_count[0], viewer_count[1], viewer_count[2], viewer_count[3], viewer_count[4], viewer_count[5], viewer_count[6], viewer_count[7],  viewer_count[8])
 
 def update_sidebar(updateText):
@@ -152,6 +153,7 @@ def update_sidebar(updateText):
     custom.mod.update(text=updateText)
     sidebar_contents = settings['description']
 
+    print(oldsidebar_formatted)
     #Update old sidebar
     subreddit.mod.update(description=oldsidebar_formatted)
 
