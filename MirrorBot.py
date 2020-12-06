@@ -136,13 +136,13 @@ def get_streamer_list():
     #Only need the name for the random stream
     random_stream = names[newindex]
 
-    global oldsidebar_formatted
-    oldsidebar_formatted = oldreddit_sidebar.format(names[0], names[1], names[2], names[3], names[4], names[5], names[6], names[7], names[8], random_stream, viewer_count[0], viewer_count[1], viewer_count[2], viewer_count[3], viewer_count[4], viewer_count[5], viewer_count[6], viewer_count[7],  viewer_count[8])
+    global oldsidebarformatted
+    oldsidebarformatted = oldreddit_sidebar.format(names[0], names[1], names[2], names[3], names[4], names[5], names[6], names[7], names[8], random_stream, viewer_count[0], viewer_count[1], viewer_count[2], viewer_count[3], viewer_count[4], viewer_count[5], viewer_count[6], viewer_count[7],  viewer_count[8])
     return newreddit_sidebar.format(names[0], names[1], names[2], names[3], names[4], names[5], names[6], names[7], names[8], random_stream, viewer_count[0], viewer_count[1], viewer_count[2], viewer_count[3], viewer_count[4], viewer_count[5], viewer_count[6], viewer_count[7],  viewer_count[8])
 
 def update_sidebar(updateText):
     #Update old sidebar
-    reddit.subreddit(os.environ['REDDIT_SUBREDDIT']).mod.update(description=oldsidebar_formatted)
+    reddit.subreddit(os.environ['REDDIT_SUBREDDIT']).mod.update(description=oldsidebarformatted)
     
     #Update new sidebar
     custom = None
