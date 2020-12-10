@@ -11,7 +11,7 @@ import os
 #####################
 
 #List of words to match GTA Roleplay
-wordList = ['nopixel','gta rp', 'gta v rp', ' rp ', 'roleplay', ' family ', 'no pixel', ' np ', 'no-pixel', 'svrp', 'twitchrp', 'aftermathrp', 'aftermath']
+wordList = ['nopixel','gta rp', 'gta v rp', ' rp ', 'roleplay', ' family ', 'no pixel', ' np ', 'no-pixel', 'svrp', 'twitchrp', 'aftermathrp', 'aftermath', 'nonstop', 'nonstoprp']
 
 #List of streamers to whitelist (if they have stupid titles without matching the above)
 streamerList = ['Spaceboy', 'JoblessGarrett', 'PENTA', 'RatedEpicz', 'summit1g', 'buddha', 'UberHaxorNova', 'Lord_Kebun', 'Ramee', 'dasMEHDI', 'koil', 's0upes', 'NewFaceSuper', 'AfriicanSnowball', 'mantisobagan', 'Madmoiselle', 'Viviana', 'JoeSmitty123', 'Xaphgnok', 'JdotField', 'the_halfhand', 'Choi', 'Armeeof1', 'NotoriousNorman', 'Jayce', 'kfruntrfrunt', 'YoinksOG', 'aXed_U', 'xReklez', 'MasterMisuri', 'Coolio']
