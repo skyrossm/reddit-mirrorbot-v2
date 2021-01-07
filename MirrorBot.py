@@ -17,7 +17,7 @@ wordList = ['nopixel','gta rp', 'gta v rp', ' rp ', 'roleplay', ' family ', 'no 
 streamerList = ['Shotz', 'CurtisRyan', 'LAGTVMaximusBlack', 'Spaceboy', 'JoblessGarrett', 'PENTA', 'RatedEpicz', 'summit1g', 'buddha', 'UberHaxorNova', 'Lord_Kebun', 'Ramee', 'dasMEHDI', 'koil', 's0upes', 'NewFaceSuper', 'AfriicanSnowball', 'mantisobagan', 'Madmoiselle', 'Viviana', 'JoeSmitty123', 'Xaphgnok', 'JdotField', 'the_halfhand', 'Choi', 'Armeeof1', 'NotoriousNorman', 'Jayce', 'kfruntrfrunt', 'YoinksOG', 'aXed_U', 'xReklez', 'MasterMisuri', 'Coolio']
 
 #Streamers to hide from the sidebar
-ignoreList = ['Vader']
+ignoreList = ['Vader', 'Zombie_Barricades']
 
 #Reddit setup
 reddit = praw.Reddit(client_id=os.environ['REDDIT_CLIENTID'],
