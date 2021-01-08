@@ -10,8 +10,8 @@ import os
 # PART 1: THE SETUP #
 #####################
 
-#List of words to match GTA Roleplay
-wordList = ['nopixel','gta rp', 'gta v rp', ' rp ', 'roleplay', ' family ', 'no pixel', ' np ', 'no-pixel', 'svrp', 'twitchrp', 'aftermathrp', 'aftermath', 'nonstop', 'nonstoprp']
+#List of words to match Rust Roleplay
+wordList = ['nopixel', 'qwefhub', 'otv']
 
 #List of streamers to whitelist (if they have stupid titles without matching the above)
 streamerList = ['Shotz', 'CurtisRyan', 'LAGTVMaximusBlack', 'Spaceboy', 'JoblessGarrett', 'PENTA', 'RatedEpicz', 'summit1g', 'buddha', 'UberHaxorNova', 'Lord_Kebun', 'Ramee', 'dasMEHDI', 'koil', 's0upes', 'NewFaceSuper', 'AfriicanSnowball', 'mantisobagan', 'Madmoiselle', 'Viviana', 'JoeSmitty123', 'Xaphgnok', 'JdotField', 'the_halfhand', 'Choi', 'Armeeof1', 'NotoriousNorman', 'Jayce', 'kfruntrfrunt', 'YoinksOG', 'aXed_U', 'xReklez', 'MasterMisuri', 'Coolio']
@@ -50,11 +50,11 @@ oldreddit_sidebar = '''
 [](https://discord.gg/pbHERV6y87)
 
 --------------------------------
-**[CLICK HERE FOR RULES](https://www.reddit.com/r/RPClipsGTA/wiki/subreddit/rules)**
+**[CLICK HERE FOR RULES](https://www.reddit.com/r/RustRPClips/wiki/subreddit/rules)**
 ---
 
 -------------------------------------------------------------
-**Top GTA RP Streamers live**
+**Top Rust Streamers live**
 ---
 Streamer | Viewer Count
     ---|---
@@ -91,31 +91,27 @@ Credit to {2} for the content.
 # PART 2: SIDEBAR BOT #
 #######################
 
-#Returns the top RP streamers from the GTA section on Twitch
+#Returns the top RP streamers from the Rust section on Twitch
 def get_streamer_list():
-    #Twitch API headers/url to get top GTA streams
+    #Twitch API headers/url to get top Rust streams
     api_url = 'https://api.twitch.tv/kraken/streams?limit=99&language=en'
     headers = {'Accept': 'application/vnd.twitchtv.v5+json', 'Client-ID': os.environ['TWITCH_CLIENTID']}
-    payload = { 'broadcaster_language': 'en', 'game': 'grand theft auto v',}
+    payload = { 'broadcaster_language': 'en', 'game': 'rust',}
     r = requests.get(api_url, headers=headers, params=payload)
 
-    #Data of the top 100 streams in GTA
+    #Data of the top 100 streams in Rust
     stream_data = r.json()
 
     #Get the top streamer names
     names = [x['channel']['display_name']
     for x in stream_data['streams']
-        if (any(s in x['channel'].get('status', '').lower() for s in wordList)
-        or any(u in x['channel'].get('display_name', '') for u in streamerList))
-        and x['broadcast_platform']=='live'
+        if x['broadcast_platform']=='live'
         and not any(u in x['channel'].get('display_name', '') for u in ignoreList)]
 
     #Same code but for view count
     viewer_count = [x['viewers']
     for x in stream_data['streams']
-        if (any(s in x['channel'].get('status', '').lower() for s in wordList)
-        or any(u in x['channel'].get('display_name', '') for u in streamerList))
-        and x['broadcast_platform']=='live'
+        if x['broadcast_platform']=='live'
         and not any(u in x['channel'].get('display_name', '') for u in ignoreList)]
 
     #Check for null values in the top 10 list (if not enough streamers online)
@@ -146,7 +142,7 @@ def update_sidebar(updateText):
     widgets = subreddit.widgets
     for widget in widgets.sidebar:
         if isinstance(widget, praw.models.CustomWidget):
-            if (widget.shortName == "TOP GTA STREAMERS"):
+            if (widget.shortName == "TOP RUST STREAMERS"):
                 custom = widget
                 break
     custom.mod.update(text=updateText)
