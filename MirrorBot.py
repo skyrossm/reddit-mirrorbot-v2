@@ -263,7 +263,7 @@ while True:
         print(submission.title)
         process_submission(submission, None)
         #prevent rate limiting (>1 request per second)
-        time.sleep(60)
+        time.sleep(300)
     #Check for new mirror requests
     for comment in comment_stream:
         if comment is None:
