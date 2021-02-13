@@ -184,12 +184,12 @@ def streamable(clip_url, submission, comment):
             reply.mod.distinguish()
             print("Replied to comment")
         #Create private backup of clip.
-        time.sleep(10) #10s for rate limiting.
-        payload = {'url': clip_url, "title": "[PRIVATE] " + title_clip + " - Clip from " + broadcaster_url}
-        r_private = requests.get(api_url, params=payload, auth=(os.environ['STREAMABLE_USER'], os.environ['STREAMABLE_PW']), headers=headers)
-        if r_private.status_code == 200:
-            priv_data = r_private.json()
-            print("Private clip created: http://streamable.com/{0}".format(priv_data['shortcode']))
+        #time.sleep(10) #10s for rate limiting.
+        #payload = {'url': clip_url, "title": "[PRIVATE] " + title_clip + " - Clip from " + broadcaster_url}
+        #r_private = requests.get(api_url, params=payload, auth=(os.environ['STREAMABLE_USER'], os.environ['STREAMABLE_PW']), headers=headers)
+        #if r_private.status_code == 200:
+        #    priv_data = r_private.json()
+        #    print("Private clip created: http://streamable.com/{0}".format(priv_data['shortcode']))
     else:
         print("Error getting streamable clip.")
         pass
@@ -263,7 +263,7 @@ while True:
         print(submission.title)
         process_submission(submission, None)
         #prevent rate limiting (>1 request per second)
-        time.sleep(5)
+        time.sleep(60)
     #Check for new mirror requests
     for comment in comment_stream:
         if comment is None:
