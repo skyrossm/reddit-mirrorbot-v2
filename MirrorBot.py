@@ -51,7 +51,7 @@ oldreddit_sidebar = '''
 
 --------------------------------
 **[CLICK HERE FOR RULES](https://www.reddit.com/r/RPClipsGTA/wiki/subreddit/rules)**
----
+-------------------------------------------------------------
 
 **[Hide Drama](https://www.reddit.com/r/RPClipsGTA/search?q=-flair%3A%3Adrama%3ADrama&restrict_sr=on&sort=top&t=day)**
 ---
