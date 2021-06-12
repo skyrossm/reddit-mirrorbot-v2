@@ -54,11 +54,6 @@ oldreddit_sidebar = '''
 -------------------------------------------------------------
 
 **[Hide Drama](https://www.reddit.com/r/RPClipsGTA/search?q=-flair%3A%3Adrama%3ADrama&restrict_sr=on&sort=top&t=day)**
----
-**[Hide xQc](https://www.reddit.com/r/RPClipsGTA/search/?q=-flair%3A%3Atwitch%3AxQcOW&restrict_sr=on&sort=top&t=day)**
----
-**[Hide xQc & Drama](https://www.reddit.com/r/RPClipsGTA/search/?q=-flair%3A%3Adrama%3ADrama+-flair%3A%3Atwitch%3AxQcOW&restrict_sr=on&sort=top&t=day)**
----
 -------------------------------------------------------------
 **Top GTA RP Streamers live**
 ---
