@@ -14,7 +14,7 @@ import os
 wordList = ['nopixel','gta rp', 'gta v rp', ' rp ', 'roleplay', ' family ', 'no pixel', ' np ', 'no-pixel', 'svrp', 'twitchrp', 'aftermathrp', 'aftermath', 'nonstop', 'nonstoprp']
 
 #List of streamers to whitelist (if they have stupid titles without matching the above)
-streamerList = ['Blaustoise', 'Sykkuno', 'MOONMOON', 'xQcOW', 'Ash_on_LoL', 'miltontpike1', 'Shotz', 'CurtisRyan', 'LAGTVMaximusBlack', 'Spaceboy', 'JoblessGarrett', 'PENTA', 'RatedEpicz', 'summit1g', 'buddha', 'UberHaxorNova', 'Lord_Kebun', 'Ramee', 'dasMEHDI', 'koil', 's0upes', 'NewFaceSuper', 'AfriicanSnowball', 'mantisobagan', 'Madmoiselle', 'Viviana', 'JoeSmitty123', 'Xaphgnok', 'JdotField', 'the_halfhand', 'Choi', 'Armeeof1', 'NotoriousNorman', 'Jayce', 'kfruntrfrunt', 'YoinksOG', 'aXed_U', 'xReklez', 'MasterMisuri', 'Coolio']
+streamerList = ['pokimane', 'Blaustoise', 'Sykkuno', 'MOONMOON', 'xQcOW', 'Ash_on_LoL', 'miltontpike1', 'Shotz', 'CurtisRyan', 'LAGTVMaximusBlack', 'Spaceboy', 'JoblessGarrett', 'PENTA', 'RatedEpicz', 'summit1g', 'buddha', 'UberHaxorNova', 'Lord_Kebun', 'Ramee', 'dasMEHDI', 'koil', 's0upes', 'NewFaceSuper', 'AfriicanSnowball', 'mantisobagan', 'Madmoiselle', 'Viviana', 'JoeSmitty123', 'Xaphgnok', 'JdotField', 'the_halfhand', 'Choi', 'Armeeof1', 'NotoriousNorman', 'Jayce', 'kfruntrfrunt', 'YoinksOG', 'aXed_U', 'xReklez', 'MasterMisuri', 'Coolio']
 
 #Streamers to hide from the sidebar
 ignoreList = ['Vader', 'Zombie_Barricades', 'RiceGum']
